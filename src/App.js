@@ -1,25 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import {BrowserRouter, Route, Routes} from "react-router-dom";
+import HomePage from "./Pages/HomePage/HomePage";
+import Header from "./Components/Header/Header";
+import MoviePage from "./Pages/PosterPreview/PosterPreview";
+import GenrePage from "./Pages/GengrePage/GenrePage";
+import ThemeSwitcher from "./hook/switchtema";
 
-function App() {
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <BrowserRouter>
+        <Header/>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/movie/:id" element={<MoviePage/>}/>
+          <Route path="/genres" element={<GenrePage/>}/>
+          <Route path="/genres/:id" element={<GenrePage/>}/>
+        </Routes>
+          <ThemeSwitcher/>
+      </BrowserRouter>
   );
-}
+};
 
-export default App;
+export {App};

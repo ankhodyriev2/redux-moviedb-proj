@@ -1,0 +1,14 @@
+.genres-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding: 0;
+    gap: 10px;
+}
+
+.genre-link {
+    background: #585858;
+    padding: 5px 10px;
+}

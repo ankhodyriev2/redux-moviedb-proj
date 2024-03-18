@@ -1,0 +1,23 @@
+.header {
+    padding: 30px 0;
+    background: #000;
+}
+
+.header-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.header-wrapper a {
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    transition: 0.3s;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1;
+}
+
