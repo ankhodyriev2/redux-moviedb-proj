@@ -7,8 +7,10 @@ import './GenreBadge.css'
 
 const GenreBadge = () => {
     const dispatch = useDispatch();
+    // @ts-expect-error TS(2339): Property 'genres' does not exist on type 'unknown'... Remove this comment to see the full error message
     const genres = useSelector(state => state.genres);
     useEffect(() => {
+        // @ts-expect-error TS(2345): Argument of type '(dispatch: any) => void' is not ... Remove this comment to see the full error message
         dispatch(getGenres())
     }, [dispatch]);
     return (

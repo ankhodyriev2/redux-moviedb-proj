@@ -9,15 +9,19 @@ const MoviePage = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const {id} = useParams();
+    // @ts-expect-error TS(2339): Property 'movie' does not exist on type 'unknown'.
     const movie = useSelector((state) => state.movie);
+    // @ts-expect-error TS(2339): Property 'production_companies' does not exist on ... Remove this comment to see the full error message
     const production_companies = useSelector(state => state.production_companies);
 
     useEffect(() => {
         const fetchMovieDetails = async () => {
+            // @ts-expect-error TS(2345): Argument of type '(dispatch: any) => void' is not ... Remove this comment to see the full error message
             await dispatch(getMovieById(id));
             navigate(`/movie/${id}`);
         };
         fetchMovieDetails();
+        // @ts-expect-error TS(2345): Argument of type '(dispatch: any) => void' is not ... Remove this comment to see the full error message
         dispatch(clearMovie())
     }, [dispatch, navigate, id]);
     return (
