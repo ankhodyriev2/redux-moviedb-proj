@@ -5,7 +5,7 @@ const BASE_URL = `https://api.themoviedb.org/3/`
 const API_KEY = `db0db81ba02a2eb52470ad910d9d6016`
 
 //Переходимо між сторінками page{id}
-const getMovies = (id) => {
+export const getMovies = (id: number) => {
     return (dispatch) => {
         axios(`${BASE_URL}/discover/movie?page=${id}&api_key=${API_KEY}&language=uk`)
 
@@ -14,7 +14,6 @@ const getMovies = (id) => {
             })
     }
 }
-export {getMovies}
 
 const getMovieById = (id) => {
     return dispatch => {
